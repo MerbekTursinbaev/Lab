@@ -3,35 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="@color/black">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/line1"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintOne"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintGuide_percent="0.9"/>
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/secondColour">
+
+        <TextView
+            android:id="@+id/first"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/second"
+            android:background="#2196F3"/>
+
+        <TextView
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/first"
+            android:background="@color/purple_500"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tvOne"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#CA2B2B"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/line1"
-        app:layout_constraintEnd_toStartOf="@id/tvSecond"/>
-
-    <TextView
-        android:id="@+id/tvSecond"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvOne"
-        app:layout_constraintBottom_toTopOf="@id/line1"/>
-
-
+        android:id="@+id/secondColour"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintOne"
+        android:background="@color/purple_200"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNext"

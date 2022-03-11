@@ -6,10 +6,63 @@
     android:padding="8dp"
     android:background="@color/black">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintFirst"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#9C27B0"/>
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/constraintSecond">
+
+        <TextView
+            android:id="@+id/first"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/second"
+            android:background="#FF1200"/>
+
+        <TextView
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/first"
+            android:background="#FF3D00"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintSecond"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/constraintFirst"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/firstC"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/secondC"
+            android:background="#E91E63"/>
+
+        <TextView
+            android:id="@+id/secondC"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/firstC"
+            app:layout_constraintBottom_toTopOf="@id/third"
+            android:background="#FF5722"/>
+
+        <TextView
+            android:id="@+id/third"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/secondC"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="#FFEB3B"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNext"
